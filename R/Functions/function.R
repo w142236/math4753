@@ -15,3 +15,4 @@ myf = function(x){
   obj = 2*x^2 - 5*x + 6
   obj
 }
+

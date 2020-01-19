@@ -1,0 +1,191 @@
+---
+title: "Lab1"
+author: "William Kett"
+date: "1/13/2020"
+output: 
+  html_document:
+    toc: yes #Table of contents
+    toc_float: yes #float allows the table of contents to "move around" so it can be seen more easily
+    theme: darkly
+    highlights: pygments
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Lab 1
+
+## Task 1
+
+```{r}
+getwd()
+```
+
+## Task 2
+
+```{r}
+ddt = read.csv("DDT.csv") #ddt object now holds the output from the read.csv function applied to the .csv file
+head(ddt) #gives the first six lines (by defualt) of the ddt file
+
+```
+
+
+## Task 3
+
+1) What is the qualitative data?
+The qualitative variables are: River and Species
+
+2) What is the Quantitative data?
+Mile, Length, Weight, and DDT (dichlordiphenyltrichloroethane or pesticides) in ppm.
+A fascinating side note: Anything higher than 5 ppm means that the fish are considered contaminated.
+
+3) How many species are in the DDT data set?
+There are 3 species of fish in the DDT data set (if you look at the entire data set and not just the head).
+
+4) Get a subset of the data with the specifications: [Species: 'LMB', and Weight > 800 mgs]
+
+
+```{r}
+with(ddt, ddt[SPECIES == "LMBASS" & WEIGHT > 800,],)
+
+
+#Clicker question stuff. Ignore comments below!
+#LENGTH = with(ddt, LENGTH)
+#LENGTH
+#mean(LENGTH)
+#WEIGHT = with(ddt, WEIGHT)
+#WEIGHT
+#sd(WEIGHT)
+#plot(WEIGHT, LENGTH, col = "Red")
+#v = 1:20
+#v = v/20
+#v
+#typeof(v)
+```
+
+5) Get a subset of the data with the specifications: [River: 'SCM', and DDT > 4]
+
+```{r}
+with(ddt, ddt[RIVER == "SCM" & DDT > 4.0,],)
+```
+
+
+### Clicker Questions
+  >
+  Q1: 42.8125
+  Q2: 376.5461
+  Q3: 0 (No)
+  Q4: v/20[last element] = 1.00
+
+## Task 4
+
+1) Make a table of the rivers
+
+```{r}
+rivs=with(ddt,table(RIVER))
+rivs
+```
+
+2) Make a color coded bar plot of the rivers
+
+```{r}
+barplot(rivs, col = rainbow(4))
+```
+
+3) Make a table of the rivers crossed with the species of the fish
+
+```{r}
+rivsp=with(ddt,table(SPECIES, RIVER))
+rivsp
+```
+
+
+4) Make a barplot of the rivers crossed with the species of the fish
+
+```{r}
+barplot(rivsp, col = rainbow(4))
+```
+
+## Task 5
+
+1) Make a pie chart of the fish SPECIES
+
+```{r}
+sp = with(ddt, table(SPECIES))
+pie(sp, col = 1:4)
+```
+
+2) Make a pie chart of the rivers
+
+```{r}
+rivs = with(ddt, table(RIVER))
+pie(rivs)
+```
+
+## Task 6
+
+1) Make a boxplot of the variable DDT
+
+```{r}
+ddt_data = with(ddt, DDT)
+boxplot(x = ddt_data, col = "Red")
+```
+
+2) Make a boxplot of the variable WEIGHT
+
+```{r}
+wgt = with(ddt, WEIGHT)
+boxplot(wgt, col = "Red", data = wgt)
+boxplot(x = wgt,col = "Red")
+```
+
+3) Make a boxplot of the variable LENGTH
+
+```{r}
+len = with(ddt, LENGTH)
+boxplot(len, col = "Red", data = len)
+```
+
+## Task 7
+
+1) Make a coplot of LENGTH vs WEIGHT given RIVER
+
+```{r}
+coplot(LENGTH~WEIGHT|RIVER, data = ddt, col = "Red") #Using naming scheme Y vs X, the Length is the y-axis and Weight is the x-axis
+```
+
+2) Make a coplot of DDT vs WEIGHT given SPECIES
+
+```{r}
+coplot(DDT~WEIGHT|SPECIES, data = ddt, col = "Red")
+```
+
+## Task 8
+
+```{r}
+#1) Use ggplot to make boxplots
+library(dplyr)
+library(ggplot2)
+# notice how the infix %>% operator works ( the pipe )
+
+ddt %>% filter() %>% mutate(AREA = LENGTH*WEIGHT) %>% ggplot(aes(x=SPECIES,y=WEIGHT,fill=RIVER)) + geom_boxplot() + ggtitle("William Kett")
+
+```
+
+2) Use ggplot to make violin plots
+
+```{r}
+ddt %>% filter() %>% mutate(AREA = LENGTH*WEIGHT) %>% ggplot(aes(x=RIVER,y=LENGTH,fill=SPECIES)) + geom_violin() + ggtitle("William Kett")
+```
+3) use ggplot to make scatter plots
+
+```{r}
+pointcol = with(ddt, ifelse(SPECIES == "CCATFISH", "Red",         #if Species is "CCATFISH", point is Red
+                            ifelse(SPECIES == "LMBASS", "Green",  #else if Species is "LMBASS", point is Green
+                                   "Blue")))                      #else point it Blue
+              
+ddt %>% filter() %>% mutate(AREA = LENGTH*WEIGHT) %>% ggplot(aes(x=WEIGHT,y=LENGTH,fill=SPECIES)) + geom_point(col = pointcol) + ggtitle("William Kett")
+```
+
+
+
