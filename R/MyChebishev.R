@@ -4,7 +4,7 @@
 #'
 #' @param k
 #'
-#' @return a number of points, n, representing that, for any distribution, there are this many or a greater number of points within k standard deviations
+#' @return a percentage of points, n, representing that, for any distribution, the percentage of points within k standard deviations of the mean is greater than or equal to this percentage
 #' @export
 #'
 #' @examples
