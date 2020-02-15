@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' mybin()
-mybin=function(iter=100,n=10, p=0.5){
+mybin=function(iter=100,n=10, p=0.5 ){
   # make a matrix to hold the samples
   #initially filled with NA's
   sam.mat=matrix(NA,nr=n,nc=iter, byrow=TRUE)
@@ -24,7 +24,7 @@ mybin=function(iter=100,n=10, p=0.5){
     succ[i]=sum(sam.mat[,i])
   }
   #Make a table of successes
-  succ.tab=table(factor(succ,levels=0:n))
+  succ.tab=table(factor(succ ,levels=0:n))
   #Make a barplot of the proportions
   barplot(succ.tab/(iter), col=rainbow(n+1), main="Binomial simulation", xlab="Number of successes")
   succ.tab/iter
