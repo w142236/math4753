@@ -7,9 +7,9 @@
 myncurve(mu, sigma)
 }
 \arguments{
-\item{mu}{The mean of the distribution curve. Essentially defines the center of the curve of the distribution.}
+\item{mu}{The mean of the normal probability distribution curve. Essentially defines the center of the curve of the distribution of the probability.}
 
-\item{sigma}{The standard deviation of the distribution curve. Used to}
+\item{sigma}{The standard deviation of the normal probability distribution curve.}
 }
 \value{
 a curve of the normal distribution (defined mean and standard deviation)
