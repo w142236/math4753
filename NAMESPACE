@@ -2,4 +2,8 @@
 
 export(chebishev)
 export(mybin)
+export(myboot2)
+export(myci)
+export(myclt)
+export(mymaxlik)
 export(myncurve)
