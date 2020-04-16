@@ -15,7 +15,7 @@ myci(x, alpha = 0.05)
 A list containing (lower bound, upper bound) of the CI for the population mean with confidence level (1-alpha)100%
 }
 \description{
-myci
+Creates confidence intervals for the mean of a population given the sample and confidence level passed in
 }
 \examples{
 myci(x = rnorm(n=20, mean = 5, sd = 2), alpha = .05)

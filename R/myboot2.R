@@ -1,5 +1,7 @@
 #' Title
 #'
+#' @description Returns a bootstrap of a sample i.e. re-samples a sample iter times; returns histogram with Confidence intervals of mean, variance, or whatever you enter for fun = "", and then return the parameter estimate for the bootstrapped interval.
+#'
 #' @param iter The Number of times that the re-sampled sample is, well, re-sampled again and again and again
 #' @param x An array holding the values in the sample
 #' @param fun The function which is being used to create a statistic. For example, sd(), var(), mean(), etc...
