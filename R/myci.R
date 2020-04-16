@@ -1,5 +1,7 @@
 #' myci
 #'
+#' @description Creates confidence intervals for the mean of a population given the sample and confidence level passed in
+#'
 #' @param x an array containing a random sample of a population
 #' @param alpha the probability of a Type 1 error used to create the confidence level
 #'

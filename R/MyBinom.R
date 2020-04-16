@@ -1,6 +1,6 @@
 #' Binomial Sampling Function
 #'
-#' This uses the sample function to produce a binomial simulation and plots the simulation and outputs a table of proportions
+#' @description This uses the sample function to produce a binomial simulation and plots the simulation and outputs a table of proportions
 #'
 #' @param iter Number of iterations
 #' @param n Number of trials
