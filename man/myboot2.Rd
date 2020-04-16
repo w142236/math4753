@@ -23,7 +23,7 @@ myboot2(iter = 10000, x, fun = "mean", alpha = 0.05, cx = 1.5, ...)
 A lot! it always returns a list of parameters and a histogram with a confidence interval and point estimate plotted onto it.
 }
 \description{
-Title
+Returns a bootstrap of a sample i.e. re-samples a sample iter times; returns histogram with Confidence intervals of mean, variance, or whatever you enter for fun = "", and then return the parameter estimate for the bootstrapped interval.
 }
 \examples{
 myboot(x = rchisq(20,3), fun = "mean")

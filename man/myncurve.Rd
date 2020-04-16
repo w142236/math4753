@@ -15,7 +15,7 @@ myncurve(mu, sigma)
 a curve of the normal distribution (defined mean and standard deviation)
 }
 \description{
-myncurve
+Returns a curve for a distribution with parameters mu and sigma representing the mean and the standard deviation.
 }
 \examples{
 myncurve(mu = 2, sigma = 1)

@@ -20,5 +20,6 @@ plot of the simulation of and a table of proportions
 This uses the sample function to produce a binomial simulation and plots the simulation and outputs a table of proportions
 }
 \examples{
+mybin(iter = 100, n = 10, p = 0.5)
 mybin()
 }

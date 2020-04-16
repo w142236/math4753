@@ -23,6 +23,7 @@ More detailed description.
 }
 \examples{
 k = 2; chebishev(k)
+k = 2; chebishev(k)
 chebishev(2)
 
 }

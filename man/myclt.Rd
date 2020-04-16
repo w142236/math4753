@@ -19,7 +19,7 @@ myclt(n, iter, a = 0, b = 5)
 summation of the y's over iter samples with n y's per sample. The higher the value of n, the closer the resulting distribution will be to a normal distribution
 }
 \description{
-Central Limit Theorem Function
+Takes in n, iter, a, and b and returns a summation of the y's in iter as a matrix and also returns a histogram of the summations. Under the CLT, the distribution represented by the histogram should be normal as the number of samples of the population, being uniform with paramters n*iter, a, and b; become increasingly large.
 }
 \examples{
 w=myclt(n=50,iter=10000,a=5,b=10)
