@@ -20,5 +20,5 @@ returns R A R being the interval with which the t-value is expected to lie betwe
 RAR statistic that deterines whether the t-value of the sample passed in and returns the t-value and the t-value intervals
 }
 \examples{
-x = rnorm(n = 30, mean = 5, sd =10);t.test.calc(x, alpha = .05, mu = 5)
+x = rnorm(n = 30, mean = 5, sd =10);ttestcalc(x, alpha = .05, mu = 5)
 }
