@@ -9,7 +9,7 @@
 #' @return plot of the simulation of and a table of proportions
 #' @export
 #'
-#' @examples
+#' @examples mybin(iter = 100, n = 10, p = 0.5)
 #' mybin()
 mybin=function(iter=100,n=10, p=0.5 ){
   # make a matrix to hold the samples

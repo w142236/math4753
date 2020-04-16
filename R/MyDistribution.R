@@ -1,6 +1,8 @@
 
 #' myncurve
 #'
+#' @description Returns a curve for a distribution with parameters mu and sigma representing the mean and the standard deviation.
+#'
 #' @param mu The mean of the normal probability distribution curve. Essentially defines the center of the curve of the distribution of the probability.
 #' @param sigma The standard deviation of the normal probability distribution curve.
 #'

@@ -1,5 +1,7 @@
 #' Central Limit Theorem Function
 #'
+#' @description Takes in n, iter, a, and b and returns a summation of the y's in iter as a matrix and also returns a histogram of the summations. Under the CLT, the distribution represented by the histogram should be normal as the number of samples of the population, being uniform with paramters n*iter, a, and b; become increasingly large.
+#'
 #' @param n Represent the number of y's used in each sample
 #' @param iter Represents the number of columns i.e. the number of samples
 #' @param a parameter of uniform distribution
